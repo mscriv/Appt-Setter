@@ -1,5 +1,4 @@
 class Appointment < ActiveRecord::Base
-  before_save :duration
 
   require 'csv'
   validates :first_name, :last_name, :start_date,    presence: true
