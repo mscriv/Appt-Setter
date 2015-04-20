@@ -1,0 +1,49 @@
+
+<%= form_tag search_appointment_imports_path, classa: 'form' do %>
+<%= text_field_tag "search_query", nil, placeholder: 'Search text' %>
+<%= submit_tag "Search", class: 'radius button tiny' %>
+<% end %>
+
+
+<h1>Listing appointment_imports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start date</th>
+      <th>Start time</th>
+      <th>End date</th>
+      <th>End time</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @appointment_imports.each do |appointment_import| %>
+      <tr>
+        <td><%= appointment_import.start_date %></td>
+        <td><%= appointment_import.start_time %></td>
+        <td><%= appointment_import.end_date %></td>
+        <td><%= appointment_import.end_time %></td>
+        <td><%= appointment_import.first_name %></td>
+        <td><%= appointment_import.last_name %></td>
+        <td><%= appointment_import.comments %></td>
+        <td><%= link_to 'Show', appointment_import %></td>
+        <td><%= link_to 'Edit', edit_appointment_import_path(appointment_import) %></td>
+        <td><%= link_to 'Destroy', appointment_import, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= form_tag import_appointment_imports_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag 'Import' %>
+<% end %>
+
+<%= link_to 'New Appointment import', new_appointment_import_path %>

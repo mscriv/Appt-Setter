@@ -38,10 +38,6 @@ class AppointmentsController < ApplicationController
     end
   end
 
-  def import
-    Appointment.import(params[:file])
-    redirect_to root_url, notice: 'Appointments imported.'
-  end
 
   def update
     respond_to do |format|

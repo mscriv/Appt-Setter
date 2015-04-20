@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @appointment_import.start_date %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @appointment_import.start_time %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @appointment_import.end_date %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @appointment_import.end_time %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @appointment_import.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @appointment_import.last_name %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @appointment_import.comments %>
+</p>
+
+<%= link_to 'Edit', edit_appointment_import_path(@appointment_import) %> |
+<%= link_to 'Back', appointment_imports_path %>

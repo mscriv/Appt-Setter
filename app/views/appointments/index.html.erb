@@ -43,9 +43,4 @@
 
 <h2>Import Appointments</h2>
 
-<%= form_tag import_appointments_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag 'Import' %>
-<% end %>
-
 <%= link_to 'New Appointment', new_appointment_path %>
