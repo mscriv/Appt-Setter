@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'welcome/index'
+
+  get 'welcome/documentation'
+
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       resources :appointments
@@ -28,6 +32,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'appointments#index'
+  root 'welcome#index'
 
 end
