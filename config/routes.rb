@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      resources :appointments
+    end
+  end
+
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      resources :appointment_imports
+    end
+  end
+
   resources :appointment_imports do
     collection { post :import }
   end
